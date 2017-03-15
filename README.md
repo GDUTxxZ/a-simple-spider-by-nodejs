@@ -25,17 +25,13 @@ a-simple-spider-by-nodejs
 
 进行第一步和第四步之前要先分析即将获取网页的dom结构，使用浏览器开发者工具。
 
-首先我们随便点开豆瓣一部电影的详情页，以下举例：
-
-![豆瓣电影《你的名字》详情页](http://upload-images.jianshu.io/upload_images/5127831-2ddd72afcc7dd870.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+首先我们随便点开豆瓣一部电影的详情页
 
 分析整个页面结构太繁琐了，这里就不列举了，我们得到的信息有：
 
 当前影片的信息：电影的名字、简介、url。
 
-![](http://upload-images.jianshu.io/upload_images/5127831-eb6da7d1aa95e5a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-从此处的各个<a>标签处获取的影片的信息：其他电影的url
+从各个<a>标签处获取的影片的信息：其他电影的url
 
 以下是该爬虫的初步代码，完成了通过url获取当前网页数据的功能：
 
