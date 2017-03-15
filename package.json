@@ -1,0 +1,22 @@
+{
+  "name": "a-simple-spider-by-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "spider.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GDUTxxZ/a-simple-spider-by-nodejs.git"
+  },
+  "author": "zxx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GDUTxxZ/a-simple-spider-by-nodejs/issues"
+  },
+  "homepage": "https://github.com/GDUTxxZ/a-simple-spider-by-nodejs#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0"
+  }
+}
