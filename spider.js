@@ -1,8 +1,6 @@
 var https = require('https');//nodejs自带模块,发送https请求
 var fs = require('fs');//nodejs自带模块,本地文件操作
 var request = require('request');//发送request请求图片
-var StringDecoder = require('string_decoder').StringDecoder;//将获取的数据解码
-var decoder = new StringDecoder('utf8');//一个实例
 var cheerio = require('cheerio');//处理解码后的数据，语法近似jQuery
 var fetch_number = 0;
 var fetch_max = 10;//用于控制爬取网页的数量
