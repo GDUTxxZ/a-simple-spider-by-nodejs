@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/GDUTxxZ/a-simple-spider-by-nodejs#readme",
   "dependencies": {
-    "cheerio": "^0.22.0"
+    "cheerio": "^0.22.0",
+    "request": "^2.81.0"
   }
 }
