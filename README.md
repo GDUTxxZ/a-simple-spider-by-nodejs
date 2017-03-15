@@ -61,5 +61,17 @@ req.on('error', (err) => {
 req.end();
 console.log('wait....');
 ```
-
+  
 上面的代码有一处问题，在获取图片url是，原本我想直接$('#mainpic>a>img').attr('src');，但是使用这种方式会多出许多undefinded，查了很多地方都找不到原因，改用each就不会有这个问题，这个坑以后再填。
+  
+--------
+
+使用方法：
+  
+将该项目下载到本地后，运行
+```
+npm install  
+node spider.js
+```
+  
+即可
