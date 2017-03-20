@@ -8,12 +8,23 @@ var url_list = {};
 url_list['https://movie.douban.com/subject/26683290/'] = true;//初始爬取点
 
 //创建好存放数据的文件夹,data存放文本数据,img存放图片
-fs.mkdir('./img/', function(error) {
-    console.log(error);
+fs.exists('./img/',function(exists){
+  if(!exists){
+    fs.mkdir('./img/', function(error) {
+      console.log(error);
+    })
+    console.log("文件不存在");
+  }
 });
-fs.mkdir('./data/', function(error) {
-   console.log(error);
-})
+fs.exists('./data/',function(exists){
+  if(!exists){
+    fs.mkdir('./data/', function(error) {
+      console.log(error);
+    })
+    console.log("文件不存在");
+  }
+});
+
 function fetchData(url) {
     fetch_number++;
     if (fetch_number < fetch_max) {
@@ -64,7 +75,7 @@ function saveImg(img_title, img_url) {
             console.log(error);
         }
     })
-    request(img_url).pipe(fs.createWriteStream('./img/' + img_title + '.jpg'));//通过流的方式，把图片写到本地/image目录下。
+    request(img_url).pipe(fs.createWriteStream('./img/' + img_title + '.jpg'));//通过流的方式，把图片写到本地/img目录下。
 }
 fetchData('https://movie.douban.com/subject/26683290/');
 console.log('wait....');
