@@ -33,40 +33,8 @@ a-simple-spider-by-nodejs
 
 从各个<a>标签处获取的影片的信息：其他电影的url
 
-以下是该爬虫的初步代码，完成了通过url获取当前网页数据的功能：
 
-```js
-var https = require('https');//nodejs自带模块,发送https请求
-var StringDecoder = require('string_decoder').StringDecoder;//将获取的数据解码
-var decoder = new StringDecoder('utf8');//一个实例
-var cheerio = require('cheerio');//处理解码后的数据，语法近似jQuery
-var url = 'https://movie.douban.com/subject/26683290/';
-var req = https.request(url, (res) => {
-        console.log('get data:\n')
-        res.on('data', function(data) {
-                data = decoder.write(data);//解码后的数据
-                var $ = cheerio.load(data);//cheerio载入数据
-                //$('body')是一个dom对象，对其调用.text()获取文本内容
-                //console.log($.text().trim());
-                console.log($('#content>h1').text().trim());//片名及上映时间
-                $('#mainpic>a>img').each(function(i, elem) {//电影图片url
-                        console.log($(this).attr('src'));
-                });
-                console.log($('#link-report>span[property="v:summary"]').text());//电影简介
-        });
-})
-req.on('error', (err) => {
-        console.log(err);
-})
-req.end();
-console.log('wait....');
-```
-  
-上面的代码有一处问题，在获取图片url是，原本我想直接$('#mainpic>a>img').attr('src');，但是使用这种方式会多出许多undefinded，查了很多地方都找不到原因，改用each就不会有这个问题，这个坑以后再填。
-  
---------
-
-使用方法：
+#使用方法：
   
 将该项目下载到本地后，运行
 ```
